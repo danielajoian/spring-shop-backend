@@ -12,8 +12,9 @@ import java.util.List;
 public class ProductStoreService {
 
     private List<Product> products = new ArrayList<>(Arrays.asList(
-        new Product("Gem", "Gem de prune", ProductCategory.HOUSEHOLD, 10.5),
-        new Product("iPhone 15 XXL", "Biggest iphone", ProductCategory.ELECTRONICS, 2000.99)
+        new Product(1, "Gem", "Gem de prune", ProductCategory.HOUSEHOLD, 10.5, ""),
+        new Product(2, "iPhone 15 XXL", "Biggest iphone", ProductCategory.ELECTRONICS, 2000.99, ""),
+        new Product(3, "Adidas Football", "Like new", ProductCategory.SPORTS, 23.4, "")
     ));
 
     public List<Product> getProducts() {

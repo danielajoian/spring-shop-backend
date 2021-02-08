@@ -1,23 +1,29 @@
 package com.codecool.shop.model;
 
+import java.util.Objects;
+import java.util.Optional;
+
 public class Product {
 
+    private int id;
     private String title;
     private String description;
     private ProductCategory category;
     private double price;
+    private String imageLink; // S3 key
 //    private SellerInfo sellerInfo;
 
     public Product() {
 
     }
 
-    public Product(String title, String description, ProductCategory category, double price) {
+    public Product(int id, String title, String description, ProductCategory category, double price, String imageLink) {
+        this.id = id;
         this.title = title;
         this.description = description;
         this.category = category;
         this.price = price;
-//        this.sellerInfo = sellerInfo;
+        this.imageLink = imageLink;
     }
 
     public String getTitle() {
@@ -52,7 +58,36 @@ public class Product {
         this.price = price;
     }
 
-//    public SellerInfo getSellerInfo() {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Optional<String> getImageLink() {
+        return Optional.ofNullable(imageLink);
+    }
+
+    public void setImageLink(String imageLink) {
+        this.imageLink = imageLink;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return id == product.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    //    public SellerInfo getSellerInfo() {
 //        return sellerInfo;
 //    }
 //
