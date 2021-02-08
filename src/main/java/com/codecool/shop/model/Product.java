@@ -6,18 +6,18 @@ public class Product {
     private String description;
     private ProductCategory category;
     private double price;
-    private SellerInfo sellerInfo;
+//    private SellerInfo sellerInfo;
 
     public Product() {
 
     }
 
-    public Product(String title, String description, ProductCategory category, double price, SellerInfo sellerInfo) {
+    public Product(String title, String description, ProductCategory category, double price) {
         this.title = title;
         this.description = description;
         this.category = category;
         this.price = price;
-        this.sellerInfo = sellerInfo;
+//        this.sellerInfo = sellerInfo;
     }
 
     public String getTitle() {
@@ -52,11 +52,11 @@ public class Product {
         this.price = price;
     }
 
-    public SellerInfo getSellerInfo() {
-        return sellerInfo;
-    }
-
-    public void setSellerInfo(SellerInfo sellerInfo) {
-        this.sellerInfo = sellerInfo;
-    }
+//    public SellerInfo getSellerInfo() {
+//        return sellerInfo;
+//    }
+//
+//    public void setSellerInfo(SellerInfo sellerInfo) {
+//        this.sellerInfo = sellerInfo;
+//    }
 }
