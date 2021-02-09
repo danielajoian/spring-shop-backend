@@ -2,21 +2,25 @@ package com.codecool.shop.model;
 
 public class Product {
 
+    private int id;
     private String title;
     private String description;
     private ProductCategory category;
     private double price;
+    private String imageLink;
 //    private SellerInfo sellerInfo;
 
     public Product() {
 
     }
 
-    public Product(String title, String description, ProductCategory category, double price) {
+    public Product(int id, String title, String description, ProductCategory category, double price, String imageLink) {
+        this.id = id;
         this.title = title;
         this.description = description;
         this.category = category;
         this.price = price;
+        this.imageLink = imageLink;
 //        this.sellerInfo = sellerInfo;
     }
 
@@ -52,7 +56,23 @@ public class Product {
         this.price = price;
     }
 
-//    public SellerInfo getSellerInfo() {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getImageLink() {
+        return imageLink;
+    }
+
+    public void setImageLink(String imageLink) {
+        this.imageLink = imageLink;
+    }
+
+    //    public SellerInfo getSellerInfo() {
 //        return sellerInfo;
 //    }
 //

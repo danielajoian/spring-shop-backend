@@ -3,12 +3,14 @@ package com.codecool.shop.controller;
 import com.codecool.shop.model.Product;
 import com.codecool.shop.service.ProductStoreService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class ProductController {
 
     private final ProductStoreService productStoreService;
