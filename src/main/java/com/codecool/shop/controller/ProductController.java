@@ -19,7 +19,7 @@ public class ProductController {
         this.productStoreService = productStoreService;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public List<Product> getProducts() {
         return productStoreService.getProducts();
     }
@@ -27,5 +27,10 @@ public class ProductController {
     @GetMapping("/{productId}")
     public Product getSingleProduct(@PathVariable("productId") int productId) {
         return productStoreService.getProductById(productId);
+    }
+
+    @PostMapping
+    public Product addProduct(@RequestBody Product product) {
+        return productStoreService.addProduct(product);
     }
 }

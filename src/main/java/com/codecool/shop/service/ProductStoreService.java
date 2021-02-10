@@ -12,6 +12,7 @@ import java.util.List;
 public class ProductStoreService {
 
     private List<Product> products;
+    private int id = 6;
 
     {
         products = new ArrayList<>(Arrays.asList(
@@ -85,5 +86,11 @@ public class ProductStoreService {
             .filter(p -> p.getId() == productId)
             .findFirst()
             .orElseThrow(() -> new IllegalArgumentException("Product with ID " + productId + " not found"));
+    }
+
+    public Product addProduct(Product product) {
+        product.setId(++id);
+        product.setUserId(0);
+        return product;
     }
 }

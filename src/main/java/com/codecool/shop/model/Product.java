@@ -24,6 +24,14 @@ public class Product {
         this.userId = userId;
     }
 
+    public Product(String title, String description, ProductCategory category, double price, String imageLink) {
+        this.title = title;
+        this.description = description;
+        this.category = category;
+        this.price = price;
+        this.imageLink = imageLink;
+    }
+
     public String getTitle() {
         return title;
     }
