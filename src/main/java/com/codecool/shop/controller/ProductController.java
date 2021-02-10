@@ -3,14 +3,13 @@ package com.codecool.shop.controller;
 import com.codecool.shop.model.Product;
 import com.codecool.shop.service.ProductStoreService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @CrossOrigin
+@RequestMapping("api/product")
 public class ProductController {
 
     private final ProductStoreService productStoreService;
@@ -20,8 +19,13 @@ public class ProductController {
         this.productStoreService = productStoreService;
     }
 
-    @GetMapping("/api")
+    @GetMapping("/")
     public List<Product> getProducts() {
         return productStoreService.getProducts();
+    }
+
+    @GetMapping("/{productId}")
+    public Product getSingleProduct(@PathVariable("productId") int productId) {
+        return productStoreService.getProductById(productId);
     }
 }

@@ -8,20 +8,20 @@ public class Product {
     private ProductCategory category;
     private double price;
     private String imageLink;
-//    private SellerInfo sellerInfo;
+    private int userId;
 
     public Product() {
 
     }
 
-    public Product(int id, String title, String description, ProductCategory category, double price, String imageLink) {
+    public Product(int id, String title, String description, ProductCategory category, double price, String imageLink, int userId) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.category = category;
         this.price = price;
         this.imageLink = imageLink;
-//        this.sellerInfo = sellerInfo;
+        this.userId = userId;
     }
 
     public String getTitle() {
@@ -72,11 +72,11 @@ public class Product {
         this.imageLink = imageLink;
     }
 
-    //    public SellerInfo getSellerInfo() {
-//        return sellerInfo;
-//    }
-//
-//    public void setSellerInfo(SellerInfo sellerInfo) {
-//        this.sellerInfo = sellerInfo;
-//    }
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 }

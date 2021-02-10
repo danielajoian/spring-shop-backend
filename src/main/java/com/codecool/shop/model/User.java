@@ -1,16 +1,24 @@
 package com.codecool.shop.model;
 
-public class SellerInfo {
+public class User {
 
+    private int id;
     private String email;
     private String phone;
     private String name;
 
-    public SellerInfo() {
+    public User() {
 
     }
 
-    public SellerInfo(String email, String phone, String name) {
+    public User(int id, String email, String phone, String name) {
+        this.id = id;
+        this.email = email;
+        this.phone = phone;
+        this.name = name;
+    }
+
+    public User(String email, String phone, String name) {
         this.email = email;
         this.phone = phone;
         this.name = name;
@@ -38,5 +46,13 @@ public class SellerInfo {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
