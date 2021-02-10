@@ -12,6 +12,12 @@ public class UserStoreService {
 
     private List<User> users = new ArrayList<>(Arrays.asList(
         new User(
+            0,
+            "test@test.com",
+            "0733333333",
+            "Test Seller"
+        ),
+        new User(
             1,
             "gigi92@gmail.com",
             "0723647123",
