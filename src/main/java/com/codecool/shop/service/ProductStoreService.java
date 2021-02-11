@@ -21,7 +21,7 @@ public class ProductStoreService {
                 "Gem",
                 "Gem de prune",
                 ProductCategory.HOUSEHOLD,
-                10.5,
+                10,
                 "https://www.reteteculinare.ro/assets/files/recipe/3453/fdb_1475477580_gem_de_prune_brumarii_bistrite_35384_3453.jpg",
                 1
 
@@ -31,7 +31,7 @@ public class ProductStoreService {
                 "iPhone 30 XXL",
                 "Biggest iPhone",
                 ProductCategory.ELECTRONICS,
-                2000.99,
+                2000,
                 "https://i.pinimg.com/originals/15/a1/4b/15a14b04dd90345469551d06f36993e4.jpg",
                 2
 
@@ -41,7 +41,7 @@ public class ProductStoreService {
                 "Zidane's Adidas cleats",
                 "Size 43, Worn by Zidane",
                 ProductCategory.SPORTS,
-                1300.9,
+                1300,
                 "https://i.pinimg.com/originals/eb/4f/41/eb4f41d38c19fa4048ccd2704f860934.jpg",
                 2
 
@@ -51,7 +51,7 @@ public class ProductStoreService {
                 "Vila Poiana Brasov",
                 "2000mp, curte mare, jacuzzi, piscina, sala sport proprie, balta pt pescuit",
                 ProductCategory.ESTATE,
-                500_000.99,
+                500_000,
                 "https://cf.bstatic.com/images/hotel/max1024x768/178/17815433.jpg",
                 3
             ),
@@ -60,7 +60,7 @@ public class ProductStoreService {
                 "Vila Sinaia",
                 "500mp, balta pt pescuit",
                 ProductCategory.ESTATE,
-                50_000.99,
+                50_000,
                 "https://cf.bstatic.com/images/hotel/max1024x768/176/176568097.jpg",
                 3
 
@@ -70,16 +70,7 @@ public class ProductStoreService {
                 "Vila Cluj",
                 "2000mp, curte mare, jacuzzi, piscina, sala sport proprie, femeia vine la pachet",
                 ProductCategory.ESTATE,
-                800_000.99,
-                "https://i.ytimg.com/vi/ddAsqtxnHF0/maxresdefault.jpg",
-                3
-            ),
-            new Product(
-                7,
-                "Vila asdf",
-                "2000mp, curte mare, jacuzzi, piscina, sala sport proprie, femeia vine la pachet",
-                ProductCategory.ESTATE,
-                800_000.99,
+                800_000,
                 "https://i.ytimg.com/vi/ddAsqtxnHF0/maxresdefault.jpg",
                 3
             )

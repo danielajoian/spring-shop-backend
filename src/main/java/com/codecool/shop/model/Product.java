@@ -1,13 +1,15 @@
 package com.codecool.shop.model;
 
 
+
 public class Product {
 
     private int id;
+
     private String title;
     private String description;
     private ProductCategory category;
-    private double price;
+    private int price;
     private String imageLink;
     private int userId;
 
@@ -15,7 +17,7 @@ public class Product {
 
     }
 
-    public Product(int id, String title, String description, ProductCategory category, double price, String imageLink, int userId) {
+    public Product(int id, String title, String description, ProductCategory category, int price, String imageLink, int userId) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -25,7 +27,7 @@ public class Product {
         this.userId = userId;
     }
 
-    public Product(String title, String description, ProductCategory category, double price, String imageLink) {
+    public Product(String title, String description, ProductCategory category, int price, String imageLink) {
         this.title = title;
         this.description = description;
         this.category = category;
@@ -57,11 +59,11 @@ public class Product {
         this.category = category;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
