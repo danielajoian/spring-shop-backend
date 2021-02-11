@@ -1,5 +1,6 @@
 package com.codecool.shop.model;
 
+
 public class Product {
 
     private int id;

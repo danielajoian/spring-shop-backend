@@ -73,6 +73,15 @@ public class ProductStoreService {
                 800_000.99,
                 "https://i.ytimg.com/vi/ddAsqtxnHF0/maxresdefault.jpg",
                 3
+            ),
+            new Product(
+                7,
+                "Vila asdf",
+                "2000mp, curte mare, jacuzzi, piscina, sala sport proprie, femeia vine la pachet",
+                ProductCategory.ESTATE,
+                800_000.99,
+                "https://i.ytimg.com/vi/ddAsqtxnHF0/maxresdefault.jpg",
+                3
             )
         ));
     }
@@ -91,6 +100,8 @@ public class ProductStoreService {
     public Product addProduct(Product product) {
         product.setId(++id);
         product.setUserId(0);
+        products.add(product);
+        System.out.println(product.getImageLink());
         return product;
     }
 }
