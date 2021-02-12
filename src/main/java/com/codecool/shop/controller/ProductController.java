@@ -1,7 +1,10 @@
 package com.codecool.shop.controller;
 
 import com.codecool.shop.model.Product;
+import com.codecool.shop.service.CategoryValidator;
+import com.codecool.shop.service.Error;
 import com.codecool.shop.service.ProductStoreService;
+import com.codecool.shop.service.ProductValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,6 +34,8 @@ public class ProductController {
 
     @PostMapping
     public Product addProduct(@RequestBody Product product) {
+        ProductValidator validator = new ProductValidator(new CategoryValidator());
+        validator.validate(product, new Error());
         System.out.println("adaug produs");
         return productStoreService.addProduct(product);
     }
