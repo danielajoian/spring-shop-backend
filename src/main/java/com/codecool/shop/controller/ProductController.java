@@ -1,7 +1,7 @@
 package com.codecool.shop.controller;
 
 import com.codecool.shop.model.Product;
-import com.codecool.shop.service.ProductStoreService;
+import com.codecool.shop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,26 +12,27 @@ import java.util.List;
 @RequestMapping("api/product")
 public class ProductController {
 
-    private final ProductStoreService productStoreService;
+    private final ProductService productService;
 
     @Autowired
-    public ProductController(ProductStoreService productStoreService) {
-        this.productStoreService = productStoreService;
+    public ProductController(ProductService productService) {
+        this.productService = productService;
     }
 
     @GetMapping
     public List<Product> getProducts() {
-        return productStoreService.getProducts();
+        return productService.getAll();
     }
 
     @GetMapping("/{productId}")
-    public Product getSingleProduct(@PathVariable("productId") int productId) {
-        return productStoreService.getProductById(productId);
+    public Product getSingleProduct(@PathVariable("productId") long productId) {
+        return productService.getProductById(productId);
     }
 
     @PostMapping
     public Product addProduct(@RequestBody Product product) {
-        System.out.println("adaug produs");
-        return productStoreService.addProduct(product);
+        return productService.addProduct(product);
     }
+
+
 }

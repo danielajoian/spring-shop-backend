@@ -1,93 +1,33 @@
 package com.codecool.shop.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.*;
 
+import javax.persistence.*;
+
+@Getter @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
+@Builder
+@Entity
 public class Product {
 
-    private int id;
+    @Id @GeneratedValue
+    private long id;
 
     private String title;
     private String description;
+
+    @Enumerated(EnumType.STRING)
     private ProductCategory category;
     private int price;
     private String imageLink;
-    private int userId;
 
-    public Product() {
+    @ManyToOne
+    @JsonIgnoreProperties( value = { "products" })
+    private User user;
 
-    }
-
-    public Product(int id, String title, String description, ProductCategory category, int price, String imageLink, int userId) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.category = category;
-        this.price = price;
-        this.imageLink = imageLink;
-        this.userId = userId;
-    }
-
-    public Product(String title, String description, ProductCategory category, int price, String imageLink) {
-        this.title = title;
-        this.description = description;
-        this.category = category;
-        this.price = price;
-        this.imageLink = imageLink;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public ProductCategory getCategory() {
-        return category;
-    }
-
-    public void setCategory(ProductCategory category) {
-        this.category = category;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getImageLink() {
-        return imageLink;
-    }
-
-    public void setImageLink(String imageLink) {
-        this.imageLink = imageLink;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
 }

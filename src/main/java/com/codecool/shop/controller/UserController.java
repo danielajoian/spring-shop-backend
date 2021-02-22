@@ -1,7 +1,7 @@
 package com.codecool.shop.controller;
 
 import com.codecool.shop.model.User;
-import com.codecool.shop.service.UserStoreService;
+import com.codecool.shop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,20 +12,20 @@ import java.util.List;
 @RequestMapping("api/user")
 public class UserController {
 
-    private final UserStoreService userStoreService;
+    private final UserService userService;
 
     @Autowired
-    public UserController(UserStoreService userStoreService) {
-        this.userStoreService = userStoreService;
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
 
     @GetMapping("/")
     public List<User> getUsers() {
-        return userStoreService.getUsers();
+        return userService.getUsers();
     }
 
     @GetMapping("/{userId}")
-    public User getSingleUser(@PathVariable("userId") int userId) {
-        return userStoreService.getUserById(userId);
+    public User getSingleUser(@PathVariable("userId") long userId) {
+        return userService.findById(userId);
     }
 }
