@@ -3,7 +3,9 @@ package com.codecool.shop.controller;
 import com.codecool.shop.model.Product;
 import com.codecool.shop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -34,5 +36,14 @@ public class ProductController {
         return productService.addProduct(product);
     }
 
+    @PostMapping(
+            path = "/api/{productId}/image/upload",
+            consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public void uploadProductImage(@PathVariable("productId") long productId,
+                                   @RequestParam("file") MultipartFile file) {
+        productService.uploadProductImage(productId, file);
+    }
 
 }
