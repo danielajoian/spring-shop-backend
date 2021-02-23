@@ -30,4 +30,19 @@ public class ProductService {
     public Product addProduct(Product productToAdd) {
         return productRepository.save(productToAdd);
     }
+
+    public Product updateProduct(Product product, long id) {
+        Product elemToUpdate = productRepository.findById(id).orElseThrow(
+                () -> new IllegalArgumentException("No product found with id: " + id)
+        );
+
+        elemToUpdate.setTitle(product.getTitle());
+        elemToUpdate.setDescription(product.getDescription());
+        elemToUpdate.setCategory(product.getCategory());
+        elemToUpdate.setPrice(product.getPrice());
+        elemToUpdate.setImageLink(product.getImageLink());
+        elemToUpdate.setUser(product.getUser());
+
+        return productRepository.save(elemToUpdate);
+    }
 }
