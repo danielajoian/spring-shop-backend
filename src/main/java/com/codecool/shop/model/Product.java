@@ -19,7 +19,9 @@ import javax.validation.constraints.Size;
 @Entity
 public class Product {
 
-    @Id @GeneratedValue
+    @Id
+    @SequenceGenerator(name = "product_sequence", sequenceName = "product_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "product_sequence")
     private long id;
 
     @NotNull

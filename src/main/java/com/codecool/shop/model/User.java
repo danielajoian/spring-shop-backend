@@ -1,6 +1,5 @@
 package com.codecool.shop.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
@@ -19,7 +18,9 @@ import java.util.List;
 @Table(name = "users")
 public class User {
 
-    @Id @GeneratedValue
+    @Id
+    @SequenceGenerator(name = "user_sequence", sequenceName = "user_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_sequence")
     private long id;
 
     @Email @NotNull
