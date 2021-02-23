@@ -15,7 +15,9 @@ import java.util.List;
 @EqualsAndHashCode
 @Builder
 @Entity
-@Table(name = "users")
+@Table(name = "users", uniqueConstraints = {
+        @UniqueConstraint(name = "user_email_unique", columnNames = "email")
+})
 public class User {
 
     @Id
@@ -32,7 +34,7 @@ public class User {
     @NotNull @Size(min = 4, max = 30)
     private String name;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties( value = { "user" })
     List<Product> products;
 }

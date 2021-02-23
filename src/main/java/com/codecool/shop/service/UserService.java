@@ -26,4 +26,29 @@ public class UserService {
             () -> new IllegalArgumentException("No User found with id: " + userId)
         );
     }
+
+    public User addUser(User user) {
+        return userRepository.save(user);
+    }
+
+    public User updateUser(User user, long id) {
+        User userToUpdate = userRepository.findById(id).orElseThrow(
+                () -> new IllegalArgumentException("No User found with id: " + id)
+        );
+
+        userToUpdate.setEmail(user.getEmail());
+        userToUpdate.setPhone(user.getPhone());
+        userToUpdate.setName(user.getName());
+        userToUpdate.setProducts(user.getProducts());
+
+        return userRepository.save(userToUpdate);
+    }
+
+    public User deleteUser(long id) {
+        User userToDelete = userRepository.findById(id).orElseThrow(
+                () -> new IllegalArgumentException("No User found with id: " + id)
+        );
+        userRepository.delete(userToDelete);
+        return userToDelete;
+    }
 }

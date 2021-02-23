@@ -45,4 +45,12 @@ public class ProductService {
 
         return productRepository.save(elemToUpdate);
     }
+
+    public Product deleteProduct(long id) {
+        Product productToDelete = productRepository.findById(id).orElseThrow(
+                () -> new IllegalArgumentException("No product found with id: " + id)
+        );
+        productRepository.delete(productToDelete);
+        return productToDelete;
+    }
 }
