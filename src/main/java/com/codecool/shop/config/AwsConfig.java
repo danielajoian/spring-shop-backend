@@ -1,4 +1,4 @@
-package com.codecool.shop.conifg;
+package com.codecool.shop.config;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;

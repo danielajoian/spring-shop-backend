@@ -1,4 +1,4 @@
-package com.codecool.shop.conifg;
+package com.codecool.shop.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
