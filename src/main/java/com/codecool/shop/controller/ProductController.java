@@ -10,7 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 @RestController
-@CrossOrigin
+@CrossOrigin("*")
 @RequestMapping("api/product")
 public class ProductController {
 
@@ -37,7 +37,7 @@ public class ProductController {
     }
 
     @PostMapping(
-            path = "/api/{productId}/image/upload",
+            path = "/{productId}/image/upload",
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
@@ -46,4 +46,8 @@ public class ProductController {
         productService.uploadProductImage(productId, file);
     }
 
+    @GetMapping("/{productId}/image/download")
+    public byte[] downloadProductImage(@PathVariable("productId") long productId) {
+        return productService.downloadProductImage(productId);
+    }
 }

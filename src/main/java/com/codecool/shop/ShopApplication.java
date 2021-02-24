@@ -39,32 +39,32 @@ public class ShopApplication {
             ));
 
 
-            productRepository.saveAll(Arrays.asList(
-                Product.builder()
-                    .price(1000)
-                    .category(ProductCategory.ELECTRONICS)
-                    .title("iPhone XXL")
-                    .imageLink("https://i.pinimg.com/originals/15/a1/4b/15a14b04dd90345469551d06f36993e4.jpg")
-                    .description("Biggest iPhone yet")
-                    .user(userRepository.getOne((long) 1))
-                .build(),
-                Product.builder()
-                    .price(500_000)
-                    .category(ProductCategory.ESTATE)
-                    .title("Vila Brasov")
-                    .imageLink("https://cf.bstatic.com/images/hotel/max1024x768/178/17815433.jpg")
-                    .description("2000mp, curte mare, jacuzzi, piscina, sala sport proprie, balta pt pescuit")
-                    .user(userRepository.getOne((long) 2))
-                    .build(),
-                Product.builder()
-                        .price(500_000)
-                        .category(ProductCategory.ESTATE)
-                        .title("Vila Brasov")
-                        .imageLink("https://cf.bstatic.com/images/hotel/max1024x768/178/17815433.jpg")
-                        .description("2000mp, curte mare, jacuzzi, piscina, sala sport proprie, balta pt pescuit")
-                        .user(userRepository.getOne((long) 2))
-                        .build()
-            ));
+//            productRepository.saveAll(Arrays.asList(
+//                Product.builder()
+//                    .price(1000)
+//                    .category(ProductCategory.ELECTRONICS)
+//                    .title("iPhone XXL")
+//                    .imageLink("https://i.pinimg.com/originals/15/a1/4b/15a14b04dd90345469551d06f36993e4.jpg")
+//                    .description("Biggest iPhone yet")
+//                    .user(userRepository.getOne((long) 1))
+//                .build(),
+//                Product.builder()
+//                    .price(500_000)
+//                    .category(ProductCategory.ESTATE)
+//                    .title("Vila Brasov")
+//                    .imageLink("https://cf.bstatic.com/images/hotel/max1024x768/178/17815433.jpg")
+//                    .description("2000mp, curte mare, jacuzzi, piscina, sala sport proprie, balta pt pescuit")
+//                    .user(userRepository.getOne((long) 2))
+//                    .build(),
+//                Product.builder()
+//                        .price(500_000)
+//                        .category(ProductCategory.ESTATE)
+//                        .title("Vila Brasov")
+//                        .imageLink("https://cf.bstatic.com/images/hotel/max1024x768/178/17815433.jpg")
+//                        .description("2000mp, curte mare, jacuzzi, piscina, sala sport proprie, balta pt pescuit")
+//                        .user(userRepository.getOne((long) 2))
+//                        .build()
+//            ));
         };
     }
 
