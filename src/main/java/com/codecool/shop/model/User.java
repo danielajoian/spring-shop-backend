@@ -31,8 +31,17 @@ public class User {
     @NotNull @Size(min = 7, max = 15)
     private String phone;
 
-    @NotNull @Size(min = 4, max = 30)
-    private String name;
+    @NotNull @Size(min = 3, max = 20)
+    private String firstName;
+
+    @NotNull @Size(min = 3, max = 20)
+    private String lastName;
+
+    @NotNull @Size(min = 3, max = 20)
+    private String password;
+
+    @NotNull @Size(min = 3, max = 20) @Transient
+    private String confirmPassword;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties( value = { "user" })

@@ -38,7 +38,10 @@ public class UserService {
 
         userToUpdate.setEmail(user.getEmail());
         userToUpdate.setPhone(user.getPhone());
-        userToUpdate.setName(user.getName());
+        userToUpdate.setFirstName(user.getFirstName());
+        userToUpdate.setLastName(user.getLastName());
+        userToUpdate.setPassword(user.getPassword());
+        userToUpdate.setConfirmPassword(userToUpdate.getConfirmPassword());
         userToUpdate.setProducts(user.getProducts());
 
         return userRepository.save(userToUpdate);
