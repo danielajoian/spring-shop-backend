@@ -3,13 +3,15 @@ package com.codecool.shop.controller;
 import com.codecool.shop.model.Product;
 import com.codecool.shop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@CrossOrigin
+@CrossOrigin("*")
 @RequestMapping("api/product")
 public class ProductController {
 
@@ -35,14 +37,18 @@ public class ProductController {
         return productService.addProduct(product);
     }
 
-    @PutMapping("/{id}")
-    public Product updateProduct(@RequestBody @Valid Product product, @PathVariable("id") long id) {
-        return productService.updateProduct(product, id);
+    @PostMapping(
+            path = "/{productId}/image/upload",
+            consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public void uploadProductImage(@PathVariable("productId") long productId,
+                                   @RequestParam("file") MultipartFile file) {
+        productService.uploadProductImage(productId, file);
     }
 
-    @DeleteMapping("/{id}")
-    public Product deleteProduct(@PathVariable("id") long id) {
-        return productService.deleteProduct(id);
+    @GetMapping("/{productId}/image/download")
+    public byte[] downloadProductImage(@PathVariable("productId") long productId) {
+        return productService.downloadProductImage(productId);
     }
-
 }
