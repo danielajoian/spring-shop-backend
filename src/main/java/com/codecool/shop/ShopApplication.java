@@ -25,18 +25,18 @@ public class ShopApplication {
     CommandLineRunner commandLineRunner(ProductRepository productRepository,
                                         UserRepository userRepository) {
         return args -> {
-            userRepository.saveAll(Arrays.asList(
-                User.builder()
-                    .email("gigi@gigel.go")
-                    .name("Gigi Gigescu")
-                    .phone("0722343643")
-                    .build(),
-                User.builder()
-                    .email("danut@dan.ro")
-                    .name("Danut Diaconescu")
-                    .phone("0744332212")
-                    .build()
-            ));
+//            userRepository.saveAll(Arrays.asList(
+//                User.builder()
+//                    .email("gigi@gigel.go")
+//                    .name("Gigi Gigescu")
+//                    .phone("0722343643")
+//                    .build(),
+//                User.builder()
+//                    .email("danut@dan.ro")
+//                    .name("Danut Diaconescu")
+//                    .phone("0744332212")
+//                    .build()
+//            ));
 
 
 //            productRepository.saveAll(Arrays.asList(

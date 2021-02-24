@@ -2,6 +2,7 @@ package com.codecool.shop.controller;
 
 import com.codecool.shop.model.Product;
 import com.codecool.shop.service.ProductService;
+import com.codecool.shop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -16,10 +17,12 @@ import java.util.List;
 public class ProductController {
 
     private final ProductService productService;
+    private final UserService userService;
 
     @Autowired
-    public ProductController(ProductService productService) {
+    public ProductController(ProductService productService, UserService userService) {
         this.productService = productService;
+        this.userService = userService;
     }
 
     @GetMapping
@@ -34,6 +37,7 @@ public class ProductController {
 
     @PostMapping
     public Product addProduct(@RequestBody @Valid Product product) {
+        product.setUser(userService.findById(1));
         return productService.addProduct(product);
     }
 

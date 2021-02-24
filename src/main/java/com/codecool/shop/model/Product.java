@@ -42,7 +42,6 @@ public class Product {
 
     private String imageLink;
 
-    @NotNull
     @ManyToOne
     @JsonIgnoreProperties( value = { "products" })
     private User user;
