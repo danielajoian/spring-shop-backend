@@ -9,7 +9,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@CrossOrigin
+@CrossOrigin("*")
 @RequestMapping("api/user")
 public class UserController {
 
@@ -28,6 +28,11 @@ public class UserController {
     @GetMapping("/{userId}")
     public User getSingleUser(@PathVariable("userId") long userId) {
         return userService.findById(userId);
+    }
+
+    @GetMapping("/email/{email}")
+    public User getUserByEmail(@PathVariable("email") String email) {
+        return userService.findByEmail(email);
     }
 
     @PostMapping

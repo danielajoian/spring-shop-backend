@@ -37,7 +37,6 @@ public class ProductController {
 
     @PostMapping
     public Product addProduct(@RequestBody @Valid Product product) {
-        product.setUser(userService.findById(1));
         return productService.addProduct(product);
     }
 

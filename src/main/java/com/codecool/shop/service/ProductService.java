@@ -53,7 +53,6 @@ public class ProductService {
     }
 
     public Product addProduct(Product productToAdd) {
-        productToAdd.setUser(userService.findById(1));
         return productRepository.save(productToAdd);
     }
 

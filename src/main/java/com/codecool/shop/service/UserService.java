@@ -54,4 +54,11 @@ public class UserService {
         userRepository.delete(userToDelete);
         return userToDelete;
     }
+
+    public User findByEmail (String email) {
+        System.out.println(email);
+        return userRepository.findByEmail(email).orElseThrow(
+                () -> new IllegalArgumentException("No User found with email: " + email)
+        );
+    }
 }
