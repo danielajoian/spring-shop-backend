@@ -13,4 +13,10 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     @Modifying
     @Query("update Product p set p.imageLink = :imageLink WHERE p.id = :productId")
     void setProductImageLink(@Param("productId") Long id, @Param("imageLink") String imageLink);
+
+    @Transactional
+    @Modifying
+    @Query("update Product p set p.timePassedSinceTheAnnounce = :timePassedSinceTheAnnounce WHERE p.id = :productId")
+    void setProductTimeFromAdd(@Param("productId") Long id,
+                               @Param("timePassedSinceTheAnnounce") long timePassedSinceTheAnnounce);
 }

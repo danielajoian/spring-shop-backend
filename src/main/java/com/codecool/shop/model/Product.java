@@ -1,15 +1,16 @@
 package com.codecool.shop.model;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 @Getter @Setter
 @NoArgsConstructor
@@ -42,8 +43,24 @@ public class Product {
 
     private String imageLink;
 
+    private String dateOfTheAnnounce;
+
+    @Getter
+    private long timePassedSinceTheAnnounce;
+
     @ManyToOne
     @JsonIgnoreProperties( value = { "products" })
     private User user;
+
+    public void calculateTimePassed() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate date = LocalDate.parse(dateOfTheAnnounce, formatter);
+        if(date != null) {
+            timePassedSinceTheAnnounce = (ChronoUnit.DAYS
+                    .between(date, LocalDate.now()));
+        }
+    }
+
+
 
 }

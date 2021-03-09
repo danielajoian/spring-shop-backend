@@ -37,6 +37,7 @@ public class ProductController {
 
     @PostMapping
     public Product addProduct(@RequestBody @Valid Product product) {
+        product.calculateTimePassed();
         return productService.addProduct(product);
     }
 

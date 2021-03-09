@@ -53,6 +53,8 @@ public class ProductService {
     }
 
     public Product addProduct(Product productToAdd) {
+        productToAdd.calculateTimePassed();
+        productToAdd.setTimePassedSinceTheAnnounce(productToAdd.getTimePassedSinceTheAnnounce());
         return productRepository.save(productToAdd);
     }
 
@@ -86,7 +88,9 @@ public class ProductService {
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
+    }
 
+    public void updateTimeFromAdd(long productId){
 
     }
 }
