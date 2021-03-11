@@ -1,12 +1,10 @@
 package com.codecool.shop.model;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -20,8 +18,11 @@ import javax.validation.constraints.Size;
 public class Product {
 
     @Id
-    @SequenceGenerator(name = "product_sequence", sequenceName = "product_sequence", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "product_sequence")
+    @SequenceGenerator(name = "product_sequence",
+            sequenceName = "product_sequence",
+            allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+            generator = "product_sequence")
     private long id;
 
     @NotNull
@@ -41,6 +42,9 @@ public class Product {
     private int price;
 
     private String imageLink;
+
+    @NotNull
+    private String dateOfAnnounce;
 
     @ManyToOne
     @JsonIgnoreProperties( value = { "products" })
