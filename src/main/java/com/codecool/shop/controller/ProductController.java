@@ -50,6 +50,16 @@ public class ProductController {
         productService.uploadProductImage(productId, file);
     }
 
+    @PutMapping()
+    public void updateProduct(@RequestBody Product product) {
+        productService.updateProduct(product);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteProduct(@PathVariable long id) {
+        productService.deleteProduct(id);
+    }
+
     @GetMapping("/{productId}/image/download")
     public byte[] downloadProductImage(@PathVariable("productId") long productId) {
         return productService.downloadProductImage(productId);
