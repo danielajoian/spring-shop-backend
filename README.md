@@ -22,3 +22,6 @@ There are fields that allow sorting the goods by date, by price (ascending or de
 Technologies used:
 * Java
 * Spring Boot
+* Hibernate
+* PostgreSQL
+* Swagger
