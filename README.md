@@ -1,4 +1,4 @@
-# spring-shop-backend
+# Spring Shop  -  backend
 
 
 An e-comerce app that allows users to sell and buy goods that are already listed.
